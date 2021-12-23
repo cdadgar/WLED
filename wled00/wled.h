@@ -157,9 +157,9 @@ using PSRAMDynamicJsonDocument = BasicJsonDocument<PSRAM_Allocator>;
 #endif
 
 #ifndef SPIFFS_EDITOR_AIRCOOOKIE
-  #error You are not using the Aircoookie fork of the ESPAsyncWebserver library.\
-  Using upstream puts your WiFi password at risk of being served by the filesystem.\
-  Comment out this error message to build regardless.
+//  #error You are not using the Aircoookie fork of the ESPAsyncWebserver library.\
+//  Using upstream puts your WiFi password at risk of being served by the filesystem.\
+//  Comment out this error message to build regardless.
 #endif
 
 #ifndef WLED_DISABLE_INFRARED

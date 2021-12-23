@@ -881,7 +881,11 @@ bool serveLiveLeds(AsyncWebServerRequest* request, uint32_t wsClient)
   if (!request) { //not HTTP, use Websockets
     #ifdef WLED_ENABLE_WEBSOCKETS
     wsc = ws.client(wsClient);
-    if (!wsc || wsc->queueLength() > 0) return false; //only send if queue free
+    // see https://github.com/Aircoookie/WLED/issues/1129
+    // gotta use his fork which has queueLength()
+    // or just remove it
+//    if (!wsc || wsc->queueLength() > 0) return false; //only send if queue free
+    if (!wsc) return false; //only send if queue free
     #endif
   }
 
