@@ -405,7 +405,7 @@ function loadPresets(callback = null)
 
 	pmtLast = pmt;
 
-	var url = '/presets.json';
+	var url = './presets.json';
 	if (loc) {
 		url = `http://${locip}/presets.json`;
 	}
@@ -1069,7 +1069,7 @@ function requestJson(command, rinfo = true) {
 	if (!jsonTimeout) jsonTimeout = setTimeout(showErrorToast, 3000);
 	var req = null;
 
-	var url = rinfo ? '/json/si': (command ? '/json/state':'/json');
+	var url = rinfo ? './json/si': (command ? './json/state':'./json');
 	if (loc) {
 		url = `http://${locip}${url}`;
 	}
@@ -1842,7 +1842,7 @@ function cnfReset()
 		bt.innerHTML = "Confirm Reboot";
 		cnfr = true; return;
 	}
-	window.location.href = "/reset";
+	window.location.href = "./reset";
 }
 
 var cnfrS = false;
